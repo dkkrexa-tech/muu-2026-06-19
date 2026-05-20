@@ -35,66 +35,88 @@
     padding:clamp(2rem,4vw,3.5rem) clamp(1.5rem,7vw,6rem);
   }
 
-  /* ─── HERO ─── */
+  /* ─── HERO COVER ─── */
   .hero{
-    margin-top:.5rem;
+    position:relative;
+    margin:0 calc(-1 * clamp(1.5rem,7vw,6rem));   /* full-bleed */
+    background:#1a1612 url('hero_muu.jpg') center/cover no-repeat;
+    color:#f4efe4;
+    min-height:min(92vh, 920px);
+    display:flex; flex-direction:column;
+    padding:clamp(1.5rem,4vw,2.5rem) clamp(1.5rem,7vw,6rem) clamp(2rem,5vw,3.5rem);
+    overflow:hidden;
+    isolation:isolate;
   }
+  .hero::before{
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:
+      linear-gradient(180deg, rgba(26,22,18,.55) 0%, rgba(26,22,18,.15) 30%, rgba(26,22,18,.75) 75%, rgba(26,22,18,.92) 100%);
+  }
+
+  /* top meta on photo */
   .meta-top{
     display:flex; justify-content:space-between; align-items:baseline;
     font-family:'Archivo Narrow','Archivo',sans-serif;
     font-weight:700; font-size:.85rem; letter-spacing:.32em; text-transform:uppercase;
-    color:var(--ink);
-    padding-bottom:.8rem; border-bottom:1px solid var(--ink);
-  }
-  .meta-top .right{color:var(--accent-deep)}
-
-  .hero-photo{
-    margin-top:1.5rem;
-    width:100%; aspect-ratio: 3 / 2;
-    background:#000 center/cover no-repeat;
-    background-image:url('hero_muu.jpg');
-    position:relative;
-    overflow:hidden;
-  }
-  .hero-photo::after{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.45) 100%);
-  }
-  .hero-tagline{
-    position:absolute; left:0; right:0; bottom:1.2rem;
-    text-align:center;
-    font-family:'Archivo Narrow','Archivo',sans-serif;
-    font-weight:700; font-size:.78rem; letter-spacing:.45em; text-transform:uppercase;
     color:#f4efe4;
-    z-index:1;
+    padding-bottom:.9rem;
+    border-bottom:1px solid rgba(244,239,228,.6);
+  }
+  .meta-top .right{color:var(--accent-soft)}
+  .meta-top em{font-style:italic;font-weight:400;color:var(--accent-soft);letter-spacing:.04em;text-transform:lowercase}
+
+  /* save-the-date row above title */
+  .save-row{
+    margin-top:auto;        /* push to bottom of hero */
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'Archivo Narrow','Archivo',sans-serif;
+    font-weight:700; font-size:.78rem; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--accent-soft);
+    padding-bottom:1rem;
   }
 
+  /* the big editorial display */
   .hero-display{
-    margin:1.8rem 0 0 0;
+    margin:0;
     font-family:'Archivo',sans-serif;
     font-weight:900;
-    font-size:clamp(3.5rem,15vw,11rem);
-    line-height:.86;
-    letter-spacing:-.045em;
+    font-size:clamp(3.2rem,14vw,10.5rem);
+    line-height:.84;
+    letter-spacing:.005em;          /* template uses +4px tracking */
     text-transform:uppercase;
-    color:var(--ink);
+    color:#f4efe4;
   }
   .hero-display em{
-    font-style:italic; font-weight:400; color:var(--accent);
+    font-style:italic; font-weight:400; color:var(--accent-soft);
+  }
+
+  /* JESUS & FREUNDE — super-spread tracking like template */
+  .hero-tagline{
+    margin-top:1.4rem;
+    font-family:'Archivo Narrow','Archivo',sans-serif;
+    font-weight:400;
+    font-size:clamp(.85rem, 1.4vw, 1.1rem);
+    letter-spacing:1em;
+    text-transform:uppercase;
+    color:var(--accent-soft);
+    padding-left:.5em;       /* visual centering with letter-spacing */
   }
 
   .hero-info{
-    margin-top:1.8rem;
-    display:flex; flex-wrap:wrap; gap:1rem 2.5rem;
-    padding-top:1.3rem; border-top:1px solid var(--ink);
-    font-family:'Archivo Narrow','Archivo',sans-serif;
-    font-weight:700; font-size:1rem; letter-spacing:.18em; text-transform:uppercase;
-  }
-  .hero-info .strong{color:var(--accent-deep)}
-  .hero-info .divider{color:var(--ink-dimmer); font-weight:400}
-  .hero-lead{
     margin-top:1.6rem;
-    max-width:62ch; font-size:1.1rem; color:var(--ink-2);
+    padding-top:1.1rem; border-top:1px solid rgba(244,239,228,.4);
+    display:flex; flex-wrap:wrap; gap:.8rem 2rem;
+    font-family:'Archivo Narrow','Archivo',sans-serif;
+    font-weight:400; font-size:clamp(.95rem,1.4vw,1.15rem);
+    letter-spacing:.08em; text-transform:uppercase;
+    color:#f4efe4;
+  }
+  .hero-info b{font-weight:700; color:var(--accent-soft); letter-spacing:.04em}
+  .hero-info .divider{color:rgba(244,239,228,.4); font-weight:400}
+
+  .hero-lead{
+    margin:2rem 0 0 0;
+    max-width:62ch; font-size:1.05rem; color:var(--ink-2);
     font-family:'Archivo',sans-serif; font-weight:400;
   }
 
@@ -297,57 +319,57 @@
 <body>
 <div class="wrap">
 
-  <!-- ── HERO ───────────────────────────────────────── -->
+  <!-- ── HERO COVER (Image + Title verschmolzen) ─────── -->
   <header class="hero">
     <div class="meta-top">
-      <span>Mitten unter <em style="font-style:italic;font-weight:500;color:var(--accent-deep)">uns</em></span>
+      <span>Mitten unter <em>uns</em></span>
       <span class="right">№ 03 · 26</span>
     </div>
 
-    <div class="hero-photo">
-      <div class="hero-tagline">Jesus &amp; Freunde</div>
+    <div class="save-row">
+      <span>Save the date</span>
+      <span>19 · 06 · 26</span>
     </div>
 
     <h1 class="hero-display">Mitten<br>unter <em>uns</em></h1>
 
+    <div class="hero-tagline">Jesus &amp; Freunde</div>
+
     <div class="hero-info">
-      <span><span class="strong">Freitag</span> · 19. Juni 2026</span>
+      <span><b>Freitag</b> · 19. Juni 2026</span>
       <span class="divider">|</span>
-      <span><span class="strong">20:00 Uhr</span> · Einlass 19:30</span>
-      <span class="divider">|</span>
-      <span>Setlist &amp; Ablauf</span>
+      <span><b>20:00 Uhr</b> · Einlass 19:30</span>
     </div>
+  </header>
 
-    <p class="hero-lead">Ablauf für unseren Lobpreis-Abend. Alle Leadsheets sind direkt verlinkt – ein Klick auf <strong>PDF</strong> öffnet das jeweilige Blatt.</p>
+  <p class="hero-lead">Ablauf für unseren Lobpreis-Abend. Alle Leadsheets sind direkt verlinkt – ein Klick auf <strong>PDF</strong> öffnet das jeweilige Blatt.</p>
 
-    <!-- Legende -->
-    <div class="legend">
-      <span class="label">Band-Level</span>
-      <div class="legend-grid">
-        <div class="lvl">
-          <div class="badge">3</div>
-          <div>
-            <div class="lvl-title">Band spielt mit</div>
-            <div class="lvl-desc">Standard-Arrangement – volle Instrumentierung</div>
-          </div>
+  <div class="legend">
+    <span class="label">Band-Level</span>
+    <div class="legend-grid">
+      <div class="lvl">
+        <div class="badge">3</div>
+        <div>
+          <div class="lvl-title">Band spielt mit</div>
+          <div class="lvl-desc">Standard-Arrangement – volle Instrumentierung</div>
         </div>
-        <div class="lvl l2">
-          <div class="badge">2</div>
-          <div>
-            <div class="lvl-title">Zurückhaltend</div>
-            <div class="lvl-desc">Band reduziert – Aufbau möglich</div>
-          </div>
+      </div>
+      <div class="lvl l2">
+        <div class="badge">2</div>
+        <div>
+          <div class="lvl-title">Zurückhaltend</div>
+          <div class="lvl-desc">Band reduziert – Aufbau möglich</div>
         </div>
-        <div class="lvl l1">
-          <div class="badge">1</div>
-          <div>
-            <div class="lvl-title">Minimal</div>
-            <div class="lvl-desc">Akustikgitarre – optional mit Hammond</div>
-          </div>
+      </div>
+      <div class="lvl l1">
+        <div class="badge">1</div>
+        <div>
+          <div class="lvl-title">Minimal</div>
+          <div class="lvl-desc">Akustikgitarre – optional mit Hammond</div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- ── AKT I ─────────────────────────────────────────── -->
   <section class="act">
