@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Mitten unter uns – 19. Juli 2026 · Setlist</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root{
+    --bg:#0b1112; --bg-2:#0f1718;
+    --surface:#141e20; --surface-2:#1a2527;
+    --warm:#f4efe4; --warm-ink:#0b1112;
+    --ink:#ffffff; --ink-dim:#9aa4a6; --ink-dimmer:#6b7577;
+    --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.18);
+    --accent:#65c1c2; --accent-bright:#7fd8d7;
+    --warm-line:rgba(11,17,18,.08); --warm-line-strong:rgba(11,17,18,.18);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter','IBM Plex Sans',Helvetica,Arial,sans-serif;
+    font-feature-settings:'cv11','ss01','ss03';
+    background:var(--bg); color:var(--ink);
+    font-size:17px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* generous side padding — content stays readable on wide screens */
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:clamp(2rem,4vw,4rem) clamp(2rem,8vw,7rem);
+  }
+
+  /* eyebrow */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:1rem;
+    font-size:.78rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--accent);
+  }
+  .eyebrow::before{content:""; width:32px; height:1px; background:var(--accent)}
+
+  /* display heading */
+  h1.display{
+    font-weight:900; line-height:.92; letter-spacing:-.04em;
+    text-transform:uppercase;
+    font-size:clamp(3rem,9vw,7.5rem);
+    margin:.4rem 0 0 0;
+  }
+  h1.display em{
+    font-style:italic; font-weight:300; color:var(--accent); text-transform:lowercase;
+  }
+  .lead{
+    font-size:1.15rem; font-weight:400; color:var(--ink-dim);
+    max-width:60ch; margin-top:1.2rem;
+  }
+  .meta-row{
+    margin-top:2.2rem; display:flex; flex-wrap:wrap; gap:1.6rem 3rem;
+    border-top:1px solid var(--line); padding-top:1.4rem;
+  }
+  .meta-row .item{display:flex; flex-direction:column; gap:.3rem}
+  .meta-row .k{font-size:.7rem; font-weight:700; letter-spacing:.25em; text-transform:uppercase; color:var(--ink-dimmer)}
+  .meta-row .v{font-size:1.05rem; color:var(--ink)}
+
+  /* legend */
+  .legend{
+    margin-top:2rem;
+    padding:1.4rem 0 0 0;
+    border-top:1px solid var(--line);
+  }
+  .legend .eyebrow{margin-bottom:1rem}
+  .legend-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem 1.6rem;
+  }
+  .lvl{
+    display:flex; gap:1rem; align-items:flex-start;
+    padding:1rem 1.1rem;
+    border:1px solid var(--line-strong);
+  }
+  .lvl .badge{
+    flex:0 0 auto;
+    width:42px; height:42px;
+    display:grid; place-items:center;
+    font-weight:900; font-size:1.3rem; letter-spacing:-.02em;
+    background:var(--accent); color:#0b1112;
+  }
+  .lvl.l2 .badge{background:transparent; color:var(--accent); border:1px solid var(--accent)}
+  .lvl.l1 .badge{background:transparent; color:var(--ink-dim); border:1px solid var(--line-strong)}
+  .lvl .lvl-title{font-weight:700; letter-spacing:.04em; font-size:.95rem}
+  .lvl .lvl-desc{font-size:.88rem; color:var(--ink-dim); margin-top:.2rem}
+  @media (max-width:760px){ .legend-grid{grid-template-columns:1fr} }
+
+  /* section warm */
+  section{padding:clamp(2.5rem,6vw,4.5rem) 0}
+  section + section{border-top:1px solid var(--line)}
+  .warm{background:var(--warm); color:var(--warm-ink); margin:0 calc(-1 * clamp(2rem,8vw,7rem)); padding-left:clamp(2rem,8vw,7rem); padding-right:clamp(2rem,8vw,7rem)}
+  .warm + section, section + .warm{border-top:0}
+  .warm .eyebrow{color:#0b1112}
+  .warm .eyebrow::before{background:#0b1112}
+  .warm .lead{color:#3a4344}
+  .warm h2 em{color:var(--accent)}
+
+  h2{
+    font-weight:900; letter-spacing:-.03em;
+    text-transform:uppercase; line-height:.95;
+    font-size:clamp(2rem,5vw,3.8rem);
+    margin:.4rem 0 .6rem 0;
+  }
+  h2 em{font-style:italic; font-weight:300; color:var(--accent); text-transform:lowercase}
+
+  .set-label{
+    display:flex; align-items:baseline; gap:1.5rem; margin-top:.4rem;
+    color:var(--ink-dim); font-size:.95rem; letter-spacing:.06em;
+  }
+  .warm .set-label{color:#3a4344}
+
+  /* songlist (CT button removed → simpler grid) */
+  .songlist{margin-top:2rem; display:flex; flex-direction:column}
+  .song{
+    display:grid;
+    grid-template-columns:54px 1fr 100px 70px 90px;
+    gap:1.2rem; align-items:center;
+    padding:1.1rem 0;
+    border-top:1px solid var(--line);
+  }
+  .warm .song{border-top-color:var(--warm-line)}
+  .song:last-of-type{border-bottom:1px solid var(--line)}
+  .warm .song:last-of-type{border-bottom-color:var(--warm-line)}
+  .num{
+    font-weight:900; font-size:1.9rem; letter-spacing:-.04em; color:var(--ink-dimmer);
+    font-variant-numeric:tabular-nums;
+  }
+  .warm .num{color:#6b7577}
+  .song .title{font-size:1.2rem; font-weight:600; letter-spacing:-.01em; line-height:1.25}
+  .song .lead-name{font-size:.9rem; color:var(--ink-dim); margin-top:.2rem; letter-spacing:.02em}
+  .warm .song .lead-name{color:#3a4344}
+  .pill{
+    display:inline-block; padding:.25rem .55rem; font-size:.7rem;
+    font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+    border:1px solid var(--line-strong); color:var(--ink); white-space:nowrap;
+  }
+  .warm .pill{border-color:var(--warm-line-strong); color:#0b1112}
+  .pill.accent{background:var(--accent); color:#0b1112; border-color:var(--accent)}
+  .pill.outline{background:transparent; color:var(--accent); border-color:var(--accent)}
+  .key{
+    font-weight:900; font-size:1.4rem; letter-spacing:-.02em;
+    color:var(--accent); font-variant-numeric:tabular-nums;
+  }
+  .links{display:flex; flex-wrap:wrap; gap:.4rem; justify-content:flex-end}
+  .links a{
+    text-decoration:none; font-size:.7rem; font-weight:700; letter-spacing:.18em;
+    text-transform:uppercase; padding:.45rem .7rem;
+    border:1px solid var(--line-strong); color:var(--ink);
+    transition:all .15s;
+  }
+  .warm .links a{border-color:var(--warm-line-strong); color:#0b1112}
+  .links a:hover{border-color:var(--accent); color:var(--accent)}
+  .links a.primary{background:var(--accent); color:#0b1112; border-color:var(--accent)}
+  .links a.primary:hover{background:var(--accent-bright); border-color:var(--accent-bright)}
+
+  /* interlude row */
+  .interlude{
+    display:grid; grid-template-columns:54px 1fr; gap:1.2rem; align-items:baseline;
+    padding:1.1rem 0;
+    border-top:1px solid var(--line);
+  }
+  .warm .interlude{border-top-color:var(--warm-line)}
+  .interlude .num{font-size:1.4rem; color:var(--accent)}
+  .interlude .label{
+    font-size:.78rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--accent);
+  }
+  .interlude .what{font-size:1.3rem; font-weight:600; margin-top:.25rem; letter-spacing:-.01em}
+
+  /* reserve section — dezent, abgesetzt */
+  .reserve{
+    margin-top:2.5rem; padding:1.6rem; border:1px dashed var(--line-strong);
+  }
+  .reserve .res-head{
+    display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;
+    font-size:.78rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--ink-dim);
+  }
+  .reserve .res-head::before{content:""; width:32px; height:1px; background:var(--ink-dim)}
+  .reserve .res-sub{font-size:.9rem; color:var(--ink-dimmer); margin-top:.4rem; letter-spacing:.02em; text-transform:none; font-weight:400}
+  .reserve .song{border-top:0; padding-top:1rem}
+  .reserve .song .title{color:var(--ink-dim)}
+  .reserve .song .num,
+  .reserve .song .key{color:var(--ink-dim)}
+
+  /* footer */
+  footer{
+    padding:clamp(2rem,4vw,3rem) 0; border-top:1px solid var(--line);
+    color:var(--ink-dimmer); font-size:.85rem;
+  }
+  footer .row{display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:space-between; align-items:center}
+  footer .brand{font-weight:700; color:var(--ink); letter-spacing:.04em}
+  footer .brand em{font-style:italic; font-weight:300; color:var(--accent)}
+
+  /* responsive */
+  @media (max-width:760px){
+    .song{grid-template-columns:42px 1fr; grid-template-rows:auto auto auto}
+    .song .key{grid-column:2; justify-self:start}
+    .song .pill{grid-column:2}
+    .song .links{grid-column:1 / -1; justify-content:flex-start}
+  }
+
+  /* print */
+  @media print{
+    body{background:#fff; color:#0b1112; font-size:11pt}
+    .wrap{max-width:none; padding:12mm}
+    section{padding:1rem 0; page-break-inside:avoid}
+    .warm{background:transparent; margin:0; padding:1rem 0}
+    .song,.interlude{border-top-color:#ddd !important; padding:.55rem 0}
+    .legend{border-top-color:#ddd}
+    .lvl{border-color:#ccc}
+    .lvl .badge{background:#0b1112 !important; color:#fff !important}
+    .lvl.l2 .badge,.lvl.l1 .badge{background:transparent !important; color:#0b1112 !important; border:1px solid #0b1112}
+    .links a{border-color:#ccc; color:#0b1112}
+    .links a.primary{background:#0b1112; color:#fff}
+    .key{color:#0b1112}
+    .pill.accent{background:#0b1112; color:#fff}
+    .pill.outline{background:transparent; color:#0b1112; border-color:#0b1112}
+    h1.display{font-size:2.6rem}
+    h2{font-size:1.6rem}
+    footer{border-color:#ddd}
+    .reserve{border-color:#999}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section style="padding-top:0">
+    <span class="eyebrow">01 · Lobpreis</span>
+    <h1 class="display">Mitten unter <em>uns</em></h1>
+    <p class="lead">Setlist und Ablauf für den Lobpreis-Abend. Alle Leadsheets liegen direkt im Ordner – einfach auf <strong>PDF</strong> klicken.</p>
+    <div class="meta-row">
+      <div class="item"><span class="k">Datum</span><span class="v">19. Juli 2026</span></div>
+      <div class="item"><span class="k">Format</span><span class="v">Mitten unter uns</span></div>
+      <div class="item"><span class="k">Songs</span><span class="v">13 + 1 Reserve</span></div>
+      <div class="item"><span class="k">Gemeinde</span><span class="v">EFG Freilassing</span></div>
+    </div>
+
+    <!-- Legende -->
+    <div class="legend">
+      <span class="eyebrow">Band-Level</span>
+      <div class="legend-grid">
+        <div class="lvl">
+          <div class="badge">3</div>
+          <div>
+            <div class="lvl-title">Band spielt mit</div>
+            <div class="lvl-desc">Standard-Arrangement – volle Instrumentierung</div>
+          </div>
+        </div>
+        <div class="lvl l2">
+          <div class="badge">2</div>
+          <div>
+            <div class="lvl-title">Aufbau / zurückhaltend</div>
+            <div class="lvl-desc">Band spielt etwas reduzierter, baut sich auf</div>
+          </div>
+        </div>
+        <div class="lvl l1">
+          <div class="badge">1</div>
+          <div>
+            <div class="lvl-title">Minimal</div>
+            <div class="lvl-desc">Akustikgitarre solo – optional mit Hammond</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SET 1 -->
+  <section class="warm">
+    <span class="eyebrow">02 · Eröffnung</span>
+    <h2>Erster <em>block</em></h2>
+    <div class="set-label">5 Songs · Einstieg in die Anbetung</div>
+    <div class="songlist">
+
+      <div class="song">
+        <div class="num">01</div>
+        <div>
+          <div class="title">Wir sind die Erlösten</div>
+          <div class="lead-name">René &amp; Karola</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">C</div>
+        <div class="links"><a href="Wir_sind_die_Erloesten_C.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">02</div>
+        <div>
+          <div class="title">Raise a Hallelujah</div>
+          <div class="lead-name">Karola &amp; David</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">C</div>
+        <div class="links"><a href="Raise_a_Hallelujah_C.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">03</div>
+        <div>
+          <div class="title">Fels der Zeiten</div>
+          <div class="lead-name">Karola &amp; David</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">C</div>
+        <div class="links"><a href="Fels_der_Zeiten_C.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">04</div>
+        <div>
+          <div class="title">Build My Life</div>
+          <div class="lead-name">Tavis · 70 BPM · 4/4</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">G</div>
+        <div class="links"><a href="Build_My_Life_G.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">05</div>
+        <div>
+          <div class="title">Jesus, Jesus, heilig und gesalbt</div>
+          <div class="lead-name">Tavis · 75 BPM · 4/4</div>
+        </div>
+        <div><span class="pill outline">Level 2</span></div>
+        <div class="key">G</div>
+        <div class="links"><a href="Jesus_Jesus_heilig_und_gesalbt_D.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="interlude">
+        <div class="num">→</div>
+        <div>
+          <div class="label">Zwischendrin</div>
+          <div class="what">Kurzes Zeugnis · Tavis</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SET 2 -->
+  <section>
+    <span class="eyebrow">03 · Vertiefung</span>
+    <h2>Zweiter <em>block</em></h2>
+    <div class="set-label">3 Songs · Stille &amp; Heiligkeit</div>
+    <div class="songlist">
+
+      <div class="song">
+        <div class="num">06</div>
+        <div>
+          <div class="title">Wo ich auch stehe <span style="color:var(--ink-dimmer); font-weight:400; font-size:.85rem; margin-left:.4rem">(Albert Frey)</span></div>
+          <div class="lead-name">Tavis</div>
+        </div>
+        <div><span class="pill">Level 1</span></div>
+        <div class="key">G</div>
+        <div class="links"><a href="Wo_ich_auch_stehe_G.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">07</div>
+        <div>
+          <div class="title">Wer sonst (Who Else) – DE</div>
+          <div class="lead-name">Tavis / David · 68 BPM · 4/4 · Level 1 → 3</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">G</div>
+        <div class="links">
+          <a href="Wer_sonst_Numbers.pdf" target="_blank">PDF</a>
+          <a href="https://www.youtube.com/watch?v=oeSKZenoCOc" target="_blank">YT</a>
+        </div>
+      </div>
+
+      <div class="song">
+        <div class="num">08</div>
+        <div>
+          <div class="title">Heilig für immer</div>
+          <div class="lead-name">Tavis · 72 BPM · 4/4</div>
+        </div>
+        <div><span class="pill outline">Level 2</span></div>
+        <div class="key">G</div>
+        <div class="links">
+          <a href="Heilig_fuer_immer_Bb.pdf" target="_blank">PDF</a>
+          <a href="https://www.youtube.com/watch?v=MIkuEkmGg-U" target="_blank">YT</a>
+        </div>
+      </div>
+
+      <div class="interlude">
+        <div class="num">→</div>
+        <div>
+          <div class="label">Wortverkündigung</div>
+          <div class="what">Impuls · René</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SET 3 — Antwort & Abschluss -->
+  <section class="warm">
+    <span class="eyebrow">04 · Antwort &amp; Abschluss</span>
+    <h2>Dritter <em>block</em></h2>
+    <div class="set-label">5 Songs · Antwort auf den Impuls – wir schließen mit Praise &amp; Meine Seele sing!</div>
+    <div class="songlist">
+
+      <div class="song">
+        <div class="num">09</div>
+        <div>
+          <div class="title">Mein Herz singt</div>
+          <div class="lead-name">David &amp; Maria · Level 1 → 3 · Leadsheet in F (G nicht verfügbar)</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">G</div>
+        <div class="links"><a href="Mein_Herz_singt_F.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">10</div>
+        <div>
+          <div class="title">Güte von Gott <span style="color:#6b7577; font-weight:400; font-size:.85rem; margin-left:.4rem">(Goodness of God)</span></div>
+          <div class="lead-name">Maria</div>
+        </div>
+        <div><span class="pill">Level 1</span></div>
+        <div class="key">G</div>
+        <div class="links"><a href="Guete_von_Gott_G.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">11</div>
+        <div>
+          <div class="title">Now To God</div>
+          <div class="lead-name">Karola &amp; David</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">D</div>
+        <div class="links"><a href="Now_To_God_D.pdf" target="_blank">PDF</a></div>
+      </div>
+
+      <div class="song">
+        <div class="num">12</div>
+        <div>
+          <div class="title">Praise <span style="color:#6b7577; font-weight:400; font-size:.78rem; margin-left:.4rem; letter-spacing:.2em; text-transform:uppercase">· Finale</span></div>
+          <div class="lead-name">Tavis · 127 BPM · 4/4</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">F</div>
+        <div class="links">
+          <a href="Praise_A.pdf" target="_blank">PDF</a>
+          <a href="https://www.youtube.com/watch?v=f2oxGYpuLkw" target="_blank">YT</a>
+        </div>
+      </div>
+
+      <div class="song">
+        <div class="num">13</div>
+        <div>
+          <div class="title">Meine Seele sing! <span style="color:#6b7577; font-weight:400; font-size:.78rem; margin-left:.4rem; letter-spacing:.2em; text-transform:uppercase">· Finale</span></div>
+          <div class="lead-name">David &amp; Judith</div>
+        </div>
+        <div><span class="pill accent">Level 3</span></div>
+        <div class="key">F</div>
+        <div class="links"><a href="Meine_Seele_sing_F.pdf" target="_blank">PDF</a></div>
+      </div>
+
+    </div>
+
+    <!-- Reserve -->
+    <div class="reserve">
+      <div class="res-head">Reserve · falls Zeit
+        <span class="res-sub">Optionaler Zusatz-Song – aktuell nicht eingeplant</span>
+      </div>
+      <div class="song">
+        <div class="num">14</div>
+        <div>
+          <div class="title">JOY</div>
+          <div class="lead-name">David</div>
+        </div>
+        <div><span class="pill outline">Optional</span></div>
+        <div class="key">C</div>
+        <div class="links"><a href="JOY_C.pdf" target="_blank">PDF</a></div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="row">
+      <div class="brand">EFG Freilassing · <em>Lobpreis</em></div>
+      <div>Setlist · Mitten unter uns · 19. Juli 2026</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
