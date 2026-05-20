@@ -192,6 +192,17 @@
 
   /* ─── SONG ROWS ─── */
   .songlist{margin-top:1.8rem; display:flex; flex-direction:column}
+  .songlist-head{
+    display:grid;
+    grid-template-columns:56px 1fr 95px 60px 80px;
+    gap:1.2rem; align-items:end;
+    padding:.7rem 0;
+    border-bottom:1.5px solid var(--ink);
+    font-family:'Archivo Narrow','Archivo',sans-serif;
+    font-weight:700; font-size:.72rem; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--ink);
+  }
+  .songlist-head .r{text-align:right}
   .song{
     display:grid;
     grid-template-columns:56px 1fr 95px 60px 80px;
@@ -199,6 +210,7 @@
     padding:1.2rem 0;
     border-top:1px solid var(--line);
   }
+  .songlist-head + .song{border-top:0}
   .song:last-of-type{border-bottom:1px solid var(--line)}
   .num{
     font-family:'Archivo',sans-serif;
@@ -298,10 +310,12 @@
 
   /* responsive song layout */
   @media (max-width:760px){
+    .songlist-head{display:none}
     .song{grid-template-columns:44px 1fr; grid-template-rows:auto auto auto}
     .song .key{grid-column:2; justify-self:start}
     .song .pill{grid-column:2}
     .song .links{grid-column:1 / -1; justify-content:flex-start}
+    .song:first-of-type{border-top:1.5px solid var(--ink)}
   }
 
   /* print */
@@ -384,6 +398,14 @@
 
     <div class="songlist">
 
+      <div class="songlist-head">
+        <div>№</div>
+        <div>Song · Lead</div>
+        <div>Level</div>
+        <div>Key</div>
+        <div class="r">Sheet</div>
+      </div>
+
       <div class="song">
         <div class="num">01</div>
         <div>
@@ -464,6 +486,14 @@
 
     <div class="songlist">
 
+      <div class="songlist-head">
+        <div>№</div>
+        <div>Song · Lead</div>
+        <div>Level</div>
+        <div>Key</div>
+        <div class="r">Sheet</div>
+      </div>
+
       <div class="song">
         <div class="num">06</div>
         <div>
@@ -527,6 +557,14 @@
     <p class="act-sub">Wir antworten auf den Impuls und schließen mit Praise &amp; Meine Seele sing!</p>
 
     <div class="songlist">
+
+      <div class="songlist-head">
+        <div>№</div>
+        <div>Song · Lead</div>
+        <div>Level</div>
+        <div>Key</div>
+        <div class="r">Sheet</div>
+      </div>
 
       <div class="song">
         <div class="num">09</div>
