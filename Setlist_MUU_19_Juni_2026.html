@@ -135,6 +135,32 @@
     font-family:'Archivo',sans-serif; font-weight:400;
   }
 
+  /* ─── DOWNLOAD ALL ─── */
+  .download-all{
+    margin-top:1.6rem;
+    display:inline-flex; align-items:center; gap:1.1rem;
+    text-decoration:none;
+    padding:1rem 1.5rem;
+    background:var(--ink); color:var(--cream);
+    border:1px solid var(--ink);
+    transition:all .15s;
+  }
+  .download-all:hover{background:var(--accent-deep); border-color:var(--accent-deep)}
+  .download-all .da-mark{
+    font-family:'Archivo',sans-serif; font-weight:900; font-size:1.6rem; line-height:1;
+    color:var(--accent-soft);
+  }
+  .download-all .da-text{display:flex; flex-direction:column; gap:.15rem}
+  .download-all .da-title{
+    font-family:'Archivo',sans-serif; font-weight:900; font-size:1.05rem;
+    letter-spacing:-.01em; text-transform:uppercase;
+  }
+  .download-all .da-sub{
+    font-family:'Archivo Narrow','Archivo',sans-serif;
+    font-weight:700; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--accent-soft);
+  }
+
   /* ─── LEGENDE ─── */
   .legend{margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--line)}
   .label{
@@ -370,6 +396,14 @@
   </header>
 
   <p class="hero-lead">Ablauf für unseren Lobpreis-Abend. Alle Leadsheets sind direkt verlinkt – ein Klick auf <strong>PDF</strong> öffnet das jeweilige Blatt.</p>
+
+  <a class="download-all" href="Setlist_MUU_19_Juni_2026.pdf" target="_blank">
+    <span class="da-mark">↓</span>
+    <span class="da-text">
+      <span class="da-title">Alle Songs als ein PDF</span>
+      <span class="da-sub">14 Leadsheets · 21 Seiten · in Setlist-Reihenfolge</span>
+    </span>
+  </a>
 
   <div class="legend">
     <span class="label">Band-Level</span>
